@@ -1,0 +1,24 @@
+import random as r
+
+def lottery():
+    _list=r.sample(range(1,40),5) #產生1到39的list，從中隨機抓五個數字
+    _list.sort()
+    three=r.sample(_list,3) #從_list裡抓三個當三星簽
+    three.sort()
+    print("今天是",month,"月",date,"日，您的幸運號碼是:",_list)
+    print("這是推薦的三星號碼:",three)
+    return _list
+  
+
+while True:
+    print("歡迎使用簽牌產生器，想離開請輸入quit。")
+    month=input("今天是幾月:")
+    if month=="quit":
+        break
+    date=input("今天是幾號:")  
+    if date=="quit":
+        break
+    lottery()
+    print()
+print("感謝您的使用，請按任意鍵關閉。")
+input()   
